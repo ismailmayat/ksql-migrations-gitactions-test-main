@@ -1,0 +1,17 @@
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: franzbischoff/replace_envs@v1
+        env:
+          KSQL_API_PASS: ${{ secrets.KSQL_API_PASS }}
+        with:
+          from_file: 'ksql-migrations.properties'
+          to_file: 'ksql-migrations.properties'
+          commit: 'false'
+      - uses: ./.github/actions/ksqldb-migrations-validate
+      - uses: ./.github/actions/ksqldb-migrations-apply
