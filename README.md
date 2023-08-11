@@ -1,6 +1,6 @@
 # ksql-migrations-gitactions-test-main
 
-Based on [blog post]([https://website-name.com](https://www.confluent.io/blog/easily-manage-database-migrations-with-evolving-schemas-in-ksqldb/))
+Based on [blog post](https://www.confluent.io/blog/easily-manage-database-migrations-with-evolving-schemas-in-ksqldb/)
 
 If you get failures on build with errors around missing streams then you can create those manually first.
 
